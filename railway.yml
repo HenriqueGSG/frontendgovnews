@@ -1,0 +1,7 @@
+version: 2
+env: production
+services:
+  - name: frontend
+    type: static
+    buildCommand: npm install && npm run build
+    startCommand: npm start
