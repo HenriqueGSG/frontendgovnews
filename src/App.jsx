@@ -19,7 +19,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Ministerios from "./pages/Ministerios/Ministerios";
 import Assembleias from "./pages/Assembleias/Assembleias";
 import Tribunais from "./pages/Tribunais/Tribunais";
-
+import { Footer } from "./components/Footer/Footer";
 function App() {
   const queryClient = new QueryClient();
   const router = createBrowserRouter(
@@ -44,9 +44,8 @@ const Root = () => {
   return (
     <>
       <Navbar />
-      <div>
-        <Outlet />
-      </div>
+      <Outlet />
+      <Footer />
     </>
   );
 };

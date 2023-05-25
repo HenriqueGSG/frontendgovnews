@@ -25,7 +25,7 @@ const CategoryNews = () => {
   };
 
   return (
-    <ul className="flex flex-row flex-wrap justify-center w-full gap-2">
+    <ul className="flex flex-row flex-wrap justify-center w-full gap-5">
       {cardCategory(listCategories)}
     </ul>
   );
