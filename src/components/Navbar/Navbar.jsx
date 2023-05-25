@@ -1,17 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../../assets/logo.png";
 export default function Navbar() {
   return (
     <nav className="absolute w-full bg-white border-gray-200 dark:bg-neutral-800">
       <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
-        <a href="https://flowbite.com/" className="flex items-center">
-          <img
-            src="https://flowbite.com/docs/images/logo.svg"
-            className="h-8 mr-3"
-            alt="Flowbite Logo"
-          />
+        <a href="/" className="flex items-center">
+          <img src={logo} className="w-10 h-10 mr-3 " alt="Logo" />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            MinNews
+            AthenaConnect
           </span>
         </a>
         <button

@@ -1,12 +1,7 @@
 import React from "react";
 
 const CategoryNews = () => {
-  const listCategories = [
-    "Ministerios",
-    "Assembleias",
-    "Tribunais",
-    "Governos dos Estados",
-  ];
+  const listCategories = ["Ministerios", "Assembleias", "Tribunais"];
   const listColors = [
     "bg-red-400",
     "bg-indigo-500",
