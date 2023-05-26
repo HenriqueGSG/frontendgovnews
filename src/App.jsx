@@ -45,6 +45,7 @@ const Root = () => {
   return (
     <>
       <Sidebar />
+      <Navbar />
 
       <Outlet />
       <Footer />

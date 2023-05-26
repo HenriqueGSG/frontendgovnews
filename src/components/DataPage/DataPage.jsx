@@ -21,7 +21,6 @@ const DataPage = ({ apiUrl, name }) => {
 
   return (
     <>
-      <Navbar />
       <div className="p-0 mt-6 sm:mt-14 sm:ml-56 sm:p-2 ">
         <div className="p-0 border-2 border-gray-200 border-dashed rounded-lg md:p-4 dark:border-gray-700">
           <div className="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
