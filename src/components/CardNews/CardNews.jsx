@@ -38,7 +38,7 @@ export default function CardNews({ dataNews, minName }) {
   };
 
   return (
-    <div className="max-w-lg p-2 m-2 text-center text-white rounded-lg shadow-lg bg-zinc-800 ">
+    <div className="max-w-md p-2 m-2 text-center text-white rounded-lg shadow-lg bg-zinc-800 ">
       <div className="relative w-full h-60 ">
         <div
           className="absolute inset-0 bg-center bg-cover"
