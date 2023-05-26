@@ -2,7 +2,6 @@ import React from "react";
 
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
 import DataPage from "../../components/DataPage/DataPage";
-LoadingScreen;
 
 const Assembleias = () => {
   return (
