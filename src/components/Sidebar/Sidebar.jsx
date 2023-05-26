@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { AiFillCloseSquare } from "react-icons/ai";
+import logo from "../../assets/logo.png";
+
 const Sidebar = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
@@ -18,7 +20,7 @@ const Sidebar = () => {
       >
         <span className="sr-only">Open sidebar</span>
         <svg
-          className="w-6 h-6"
+          className="z-50 w-6 h-6"
           aria-hidden="true"
           fill="currentColor"
           viewBox="0 0 20 20"
@@ -34,12 +36,12 @@ const Sidebar = () => {
 
       <aside
         id="default-sidebar"
-        className={`fixed top-0 left-0 z-40 w-52 h-screen transition-transform ${
+        className={`fixed top-0 left-0 z-50 h-screen transition-transform ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } sm:translate-x-0`}
         aria-label="Sidebar"
       >
-        <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+        <div className="w-56 h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
           <button
             onClick={() => setSidebarOpen(!isSidebarOpen)}
             className="absolute top-1 right-2 sm:hidden"

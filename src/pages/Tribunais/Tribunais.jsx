@@ -1,10 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import CardList from "../../components/CardList/CardList";
-import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
+import React from "react";
 
-import loadingAnimation from "../../lottie/99109-loading.json";
-import lottie from "lottie-web";
 import DataPage from "../../components/DataPage/DataPage";
 
 const Tribunais = () => {

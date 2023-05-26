@@ -1,9 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import CardList from "../../components/CardList/CardList";
-import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
-import loadingAnimation from "../../lottie/99109-loading.json";
-import lottie from "lottie-web";
+import React from "react";
+
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
 import DataPage from "../../components/DataPage/DataPage";
 LoadingScreen;
