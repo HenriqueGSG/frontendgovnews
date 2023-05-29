@@ -16,7 +16,7 @@ export default function CardNews({ dataNews, minName }) {
       return (
         <li className="shadow-md " key={index}>
           <a
-            className="flex flex-col items-start px-2 py-2 border rounded-lg hover:bg-neutral-500 bg-neutral-700 border-neutral-600"
+            className="flex flex-col items-start px-2 py-2 border rounded-md hover:bg-neutral-500 bg-neutral-700 border-neutral-600"
             href={item.url}
             target="_blank"
           >
@@ -25,7 +25,7 @@ export default function CardNews({ dataNews, minName }) {
             </span>
             <div className="relative flex flex-row items-center w-full h-16 pl-2 text-start min-h-fit">
               <h3 className="text-sm w-12/12 ">{item.title}</h3>
-              <div className="absolute bottom-0 right-0 flex items-center text-xs text-neutral-300 gap-x-1">
+              <div className="absolute bottom-0 right-0 flex items-center text-xs text-neutral-400 gap-x-1">
                 <span className=""> {formattedDateTime}</span>
                 {/* <span className="">{item.hour}</span> */}
               </div>
@@ -38,10 +38,10 @@ export default function CardNews({ dataNews, minName }) {
   };
 
   return (
-    <div className="max-w-md p-2 m-2 text-center text-white rounded-lg shadow-lg bg-zinc-800 ">
+    <div className="max-w-lg p-2 m-1 text-center text-white rounded-lg shadow-lg bg-neutral-900">
       <div className="relative w-full h-60 ">
         <div
-          className="absolute inset-0 bg-center bg-cover"
+          className="absolute inset-0 bg-center bg-cover "
           style={{
             backgroundImage: `url(https://i.ibb.co/4F0Kn3v/bg-image.png)`,
           }}

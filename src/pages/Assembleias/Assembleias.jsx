@@ -8,6 +8,7 @@ const Assembleias = () => {
     <DataPage
       apiUrl={"https://fastapi1-1-s9258384.deta.app/assembleias"}
       name={"Assembleias"}
+      bgColor={"bg-green-500"}
     />
   );
 };

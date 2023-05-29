@@ -16,7 +16,7 @@ const Sidebar = () => {
         aria-controls="default-sidebar"
         type="button"
         onClick={() => setSidebarOpen(!isSidebarOpen)}
-        className="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        className="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg  sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
       >
         <span className="sr-only">Open sidebar</span>
         <svg
@@ -41,7 +41,7 @@ const Sidebar = () => {
         } sm:translate-x-0`}
         aria-label="Sidebar"
       >
-        <div className="w-56 h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+        <div className="w-56 h-full px-3 overflow-y-auto text-white pt-14 bg-neutral-900 dark:bg-gray-800">
           <button
             onClick={() => setSidebarOpen(!isSidebarOpen)}
             className="absolute top-1 right-2 sm:hidden"
@@ -52,7 +52,7 @@ const Sidebar = () => {
             <li>
               <a
                 href="/"
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                className="flex items-center p-2 text-gray-900 bg-white rounded-md shadow-sm dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
               >
                 <svg
                   aria-hidden="true"
@@ -64,13 +64,13 @@ const Sidebar = () => {
                   <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
                   <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
                 </svg>
-                <span className="ml-3">Dashboard</span>
+                <span className="ml-3">Home</span>
               </a>
             </li>
             <li>
               <a
                 href="/ministerios"
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                className="flex items-center p-2 text-gray-900 bg-white rounded-md dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 "
               >
                 <svg
                   aria-hidden="true"
@@ -92,7 +92,7 @@ const Sidebar = () => {
             <li>
               <a
                 href="/assembleias"
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                className="flex items-center p-2 text-gray-900 bg-white rounded-md shadow-sm dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
               >
                 <svg
                   aria-hidden="true"
@@ -115,7 +115,7 @@ const Sidebar = () => {
             <li>
               <a
                 href="tribunais"
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                className="flex items-center p-2 text-gray-900 bg-white rounded-md shadow-sm dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
               >
                 <svg
                   aria-hidden="true"

@@ -7,6 +7,7 @@ const Ministerios = () => {
     <DataPage
       apiUrl={"https://fastapi1-1-s9258384.deta.app/ministerios"}
       name={"Ministerios"}
+      bgColor={"bg-indigo-500"}
     />
   );
 };
