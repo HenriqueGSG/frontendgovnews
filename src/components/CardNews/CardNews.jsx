@@ -58,7 +58,7 @@ export default function CardNews({ dataNews, minName }) {
         alt="Ministério economia"
         className="w-full h-60"
       /> */}
-      <div className="flex flex-col justify-end max-h-96 ">
+      <div className="flex flex-col justify-end ">
         <h2 className="py-2 text-xl ">{}</h2>
         <ul className="flex flex-col px-2 py-2 overflow-y-auto custom-scrollbar gap-y-2">
           {news(dataNews)}
