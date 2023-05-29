@@ -3,8 +3,9 @@ import CardList from "../../components/CardList/CardList";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
-import logo from "../../assets/logo.png";
-import Navbar from "../Navbar/Navbar";
+
+import "@fontsource/merriweather"; // Importe a fonte Merriweather
+
 const DataPage = ({ apiUrl, name, bgColor }) => {
   const { isLoading, isError, data, error, refetch } = useQuery({
     queryKey: [name],
@@ -26,7 +27,7 @@ const DataPage = ({ apiUrl, name, bgColor }) => {
           <div
             className={`flex items-center justify-center h-48 mb-4 rounded ${bgColor} dark:bg-gray-800`}
           >
-            <p className="text-5xl font-semibold text-white dark:text-gray-500">
+            <p className="text-5xl font-semibold text-white dark:text-gray-500 font-merriweather">
               {name}
             </p>
           </div>

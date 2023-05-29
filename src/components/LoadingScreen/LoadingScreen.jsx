@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import loadingAnimation from "../../lottie/99109-loading.json";
 import lottie from "lottie-web";
 import logo from "../../assets/logo.png";
+import "@fontsource/merriweather"; // Importe a fonte Merriweather
 
 const LoadingScreen = ({ categoria, name, bgColor }) => {
   const animRef = useRef(null);
@@ -23,7 +24,7 @@ const LoadingScreen = ({ categoria, name, bgColor }) => {
           <div
             className={`flex items-center justify-center h-48 mb-4 rounded ${bgColor} dark:bg-gray-800`}
           >
-            <p className="text-5xl font-semibold text-white dark:text-gray-500">
+            <p className="text-5xl font-semibold text-white dark:text-gray-500 font-merriweather">
               {categoria}
             </p>
           </div>

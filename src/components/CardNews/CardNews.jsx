@@ -1,5 +1,6 @@
 import React from "react";
 import "./CardNews.css";
+import "@fontsource/merriweather"; // Importe a fonte Merriweather
 
 export default function CardNews({ dataNews, minName }) {
   const news = (dataNews) => {
@@ -20,11 +21,13 @@ export default function CardNews({ dataNews, minName }) {
             href={item.url}
             target="_blank"
           >
-            <span className="pl-1 text-xs font-semibold item ">
+            <span className="pl-1 text-xs font-semibold item font-merriweather ">
               {item.subtitle}
             </span>
             <div className="relative flex flex-row items-center w-full h-16 pl-2 text-start min-h-fit">
-              <h3 className="text-sm w-12/12 ">{item.title}</h3>
+              <h3 className="text-xs w-12/12 font-merriweather ">
+                {item.title}
+              </h3>
               <div className="absolute bottom-0 right-0 flex items-center text-xs text-neutral-400 gap-x-1">
                 <span className=""> {formattedDateTime}</span>
                 {/* <span className="">{item.hour}</span> */}

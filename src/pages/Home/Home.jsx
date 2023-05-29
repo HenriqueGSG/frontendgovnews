@@ -51,21 +51,25 @@ export default function Home() {
         <CardSmall
           listOrgs={data["ministerio"]}
           name={"Ministérios"}
-          color={"bg-indigo-600"}
+          color={"bg-gradient-to-r from-indigo-500 to-indigo-600"}
           url={"/ministerios"}
         />
         <CardSmall
           listOrgs={data["assembleia"]}
           name={"Assembleias"}
-          color={"bg-green-600"}
+          color={"bg-gradient-to-r from-green-500 to-green-600"}
           url={"/assembleias"}
         />
-        <CardSmall
-          listOrgs={data["tribunal"]}
-          name={"Tribunais"}
-          color={"bg-orange-600"}
-          url={"/tribunais"}
-        />
+        {data["tribunal"] ? (
+          <CardSmall
+            listOrgs={data["tribunal"]}
+            name={"Tribunais"}
+            color={"bg-gradient-to-r from-orange-500 to-orange-600"}
+            url={"/tribunais"}
+          />
+        ) : (
+          ""
+        )}
       </div>
       {
         /* MAIN */
