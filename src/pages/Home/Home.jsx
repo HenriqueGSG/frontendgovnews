@@ -5,7 +5,7 @@ import axios from "axios";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
 
 export default function Home() {
-  const apiUrl = "http://127.0.0.1:8000/orgs";
+  const apiUrl = "'https://fastapi1-1-s9258384.deta.app/orgs'";
 
   const { isLoading, isError, data, error, refetch } = useQuery({
     queryKey: ["orgsList"],
