@@ -1,7 +1,6 @@
 import React from "react";
 import "./CardNews.css";
 import "@fontsource/merriweather"; // Importe a fonte Merriweather
-import ScrollLock from "react-scroll-lock";
 export default function CardNews({ dataNews, minName }) {
   const news = (dataNews) => {
     const newArray = dataNews.documentos.map((item, index) => {
