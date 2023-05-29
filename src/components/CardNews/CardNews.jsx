@@ -1,7 +1,7 @@
 import React from "react";
 import "./CardNews.css";
 import "@fontsource/merriweather"; // Importe a fonte Merriweather
-
+import ScrollLock from "react-scroll-lock";
 export default function CardNews({ dataNews, minName }) {
   const news = (dataNews) => {
     const newArray = dataNews.documentos.map((item, index) => {
@@ -50,7 +50,7 @@ export default function CardNews({ dataNews, minName }) {
           }}
         ></div>
         <div className="absolute inset-0 bg-black opacity-50"></div>
-        <h2 className="absolute inset-0 flex items-center justify-center p-10 text-2xl font-semibold text-white">
+        <h2 className="absolute inset-0 flex items-center justify-center p-10 text-2xl font-semibold text-white font-merriweather">
           {dataNews["_id"]}
         </h2>
       </div>

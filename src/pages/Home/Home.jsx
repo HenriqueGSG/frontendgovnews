@@ -48,18 +48,27 @@ export default function Home() {
       {/* NAV BAR */}
 
       <div className="flex flex-col min-h-screen gap-3 p-4 mt-2 sm:mt-14 bg-neutral-800 sm:ml-56">
-        <CardSmall
-          listOrgs={data["ministerio"]}
-          name={"Ministérios"}
-          color={"bg-gradient-to-r from-indigo-500 to-indigo-600"}
-          url={"/ministerios"}
-        />
-        <CardSmall
-          listOrgs={data["assembleia"]}
-          name={"Assembleias"}
-          color={"bg-gradient-to-r from-green-500 to-green-600"}
-          url={"/assembleias"}
-        />
+        {data["ministerio"] ? (
+          <CardSmall
+            listOrgs={data["ministerio"]}
+            name={"Ministérios"}
+            color={"bg-gradient-to-r from-indigo-500 to-indigo-600"}
+            url={"/ministerios"}
+          />
+        ) : (
+          ""
+        )}
+
+        {data["assembleia"] ? (
+          <CardSmall
+            listOrgs={data["assembleia"]}
+            name={"Assembleias"}
+            color={"bg-gradient-to-r from-green-500 to-green-600"}
+            url={"/assembleias"}
+          />
+        ) : (
+          ""
+        )}
         {data["tribunal"] ? (
           <CardSmall
             listOrgs={data["tribunal"]}
