@@ -47,7 +47,7 @@ export default function Home() {
     <>
       {/* NAV BAR */}
 
-      <div className="flex flex-col min-h-screen gap-3 p-4 mt-2 sm:mt-14 bg-neutral-800 sm:ml-56">
+      <div className="flex flex-col min-h-screen gap-3 px-4 py-10 mt-2 sm:py-5 sm:mt-14 bg-neutral-800 sm:ml-56">
         {data["ministerio"] ? (
           <CardSmall
             listOrgs={data["ministerio"]}

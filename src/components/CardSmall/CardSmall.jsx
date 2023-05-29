@@ -41,7 +41,7 @@ const CardSmall = ({ listOrgs, name, color, url }) => {
     <div className="relative p-4 rounded-lg bg-neutral-900">
       {/* <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg "> */}
       <div className="flex flex-col gap-3 ">
-        <h1 className="w-full text-3xl font-semibold text-white font-merriweather ">
+        <h1 className="w-full py-2 text-3xl font-semibold text-center text-white sm:text-start font-merriweather ">
           {name}
         </h1>
         <div className="grid grid-cols-1 gap-2 mb-4 md:grid-cols-2 lg:grid-cols-3">
