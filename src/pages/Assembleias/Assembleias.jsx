@@ -9,6 +9,8 @@ const Assembleias = () => {
       apiUrl={"https://fastapi1-1-s9258384.deta.app/assembleias"}
       name={"Assembleias"}
       bgColor={"bg-gradient-to-r from-green-500 to-green-600"}
+      headerName={"Assembleia"}
+      orgName={"assembleia"}
     />
   );
 };

@@ -42,7 +42,13 @@ const Sidebar = () => {
         } sm:translate-x-0`}
         aria-label="Sidebar"
       >
-        <div className="w-56 h-full px-3 overflow-y-auto text-white pt-14 bg-neutral-900 dark:bg-gray-800">
+        <div className="h-full px-3 overflow-y-auto text-white bg-neutral-200 dark:bg-gray-800">
+          <a href="/" className="flex items-center py-6 text-white">
+            <img src={logo} className="w-10 h-10 " alt="Logo" />
+            <span className="self-center text-2xl font-semibold text-black whitespace-nowrap font-merriweather">
+              AthenaConnect
+            </span>
+          </a>
           <button
             onClick={() => setSidebarOpen(!isSidebarOpen)}
             className="absolute top-1 right-2 sm:hidden"
