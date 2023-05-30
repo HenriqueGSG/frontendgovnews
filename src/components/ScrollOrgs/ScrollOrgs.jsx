@@ -23,7 +23,7 @@ export const ScrollOrgs = ({ listOrgs, bgColor, textColor }) => {
   };
 
   return (
-    <div className="flex flex-row items-center h-16 min-w-full gap-6 overflow-x-auto custom-scrollbar">
+    <div className="fixed top-0 z-50 flex flex-row items-center min-w-full gap-6 py-4 overflow-x-auto mt-14 sm:mt-0 custom-scrollbar sm:relative bg-neutral-100">
       {orgsItems()}
     </div>
   );

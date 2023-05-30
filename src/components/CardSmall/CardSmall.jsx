@@ -44,6 +44,7 @@ const CardSmall = ({ lastNewsOrg, name, color, url, listOrgs }) => {
           target="_blank"
           href="#"
           className={` min-w-fit  px-3 py-1 rounded-md text-white shadow-md ${color}`}
+          style={{ whiteSpace: "nowrap" }}
         >
           {org}
         </a>
