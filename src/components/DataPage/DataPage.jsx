@@ -38,8 +38,8 @@ const DataPage = ({ apiUrl, headerName, bgColor, orgName }) => {
   console.log(listOrgsData[orgName]);
   return (
     <>
-      <div className="relative min-h-screen p-4 pt-24 sm:pt-4 sm:ml-60 bg-neutral-100 ">
-        <div className="p-0 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+      <div className="relative min-h-screen p-4 pt-28 sm:pt-4 sm:ml-60 bg-neutral-100 ">
+        <div className="py-1 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
           <div
             className={`flex items-center justify-center h-48 mb-4 rounded ${bgColor} dark:bg-gray-800`}
           >
@@ -47,11 +47,15 @@ const DataPage = ({ apiUrl, headerName, bgColor, orgName }) => {
               {headerName}
             </p>
           </div>
-          <ScrollOrgs
-            listOrgs={listOrgsData[orgName]}
-            bgColor={"bg-white"}
-            textColor={"text-black"}
-          />
+          <div
+            className={`fixed gap-x-4  mt-14 sm:mt-0 sm:relative top-0 z-40 flex items-center  w-full h-16 mb-4 overflow-x-auto hidden:overflow-x-auto custom-scrollbar bg-neutral-100`}
+          >
+            <ScrollOrgs
+              listOrgs={listOrgsData[orgName]}
+              bgColor={"bg-white"}
+              textColor={"text-black"}
+            />
+          </div>
           <div className="flex items-center justify-center">
             <CardList data={cardsData} />
           </div>
