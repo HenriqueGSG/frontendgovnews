@@ -28,13 +28,21 @@ export default function CardList(props) {
   // };
 
   return (
-    <div className="flex flex-row flex-wrap justify-center">
+    <div className="grid w-full gap-4 grid-flow-col-1 lg:grid-cols-2 xl:grid-cols-3">
       {data
         ? Object.values(data).map((dataNews, index) => (
-            <CardNews dataNews={dataNews} key={dataNews["_id"]} minName="" />
+            <CardNews dataNews={dataNews} key={dataNews["_id"]} />
           ))
         : "error"}
       ;
     </div>
   );
+  {
+    /* {data
+        ? Object.values(data).map((dataNews, index) => (
+            <CardNews dataNews={dataNews} key={dataNews["_id"]} minName="" />
+          ))
+        : "error"}
+      ; */
+  }
 }

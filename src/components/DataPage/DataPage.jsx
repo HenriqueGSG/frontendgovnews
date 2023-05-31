@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
 import "@fontsource/merriweather"; // Importe a fonte Merriweather
 import { ScrollOrgs } from "../ScrollOrgs/ScrollOrgs";
-
+import CardNews from "../CardNews/CardNews";
 const DataPage = ({ apiUrl, headerName, bgColor, orgName }) => {
   const listOrgsUrl = "https://fastapi1-1-s9258384.deta.app/unique-orgs";
 
@@ -37,7 +37,7 @@ const DataPage = ({ apiUrl, headerName, bgColor, orgName }) => {
   }
   return (
     <>
-      <div className="relative min-h-screen p-4 pt-28 sm:pt-4 sm:ml-60 bg-neutral-100 ">
+      <div className="relative min-h-screen p-4 shadow-inner pt-28 sm:pt-4 sm:ml-60 bg-neutral-100 ">
         <div className="py-1 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
           <div
             className={`flex items-center justify-center h-48 mb-4 rounded ${bgColor} dark:bg-gray-800`}
@@ -55,8 +55,14 @@ const DataPage = ({ apiUrl, headerName, bgColor, orgName }) => {
               textColor={"text-black"}
             />
           </div>
-          <div className="flex items-center justify-center">
-            <CardList data={cardsData} />
+
+          <div className="grid w-full gap-4 grid-flow-col-1 lg:grid-cols-2 xl:grid-cols-3">
+            {cardsData
+              ? Object.values(cardsData).map((dataNews, index) => (
+                  <CardNews dataNews={dataNews} key={dataNews["_id"]} />
+                ))
+              : "error"}
+            ;
           </div>
         </div>
       </div>

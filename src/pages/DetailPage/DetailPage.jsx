@@ -2,6 +2,10 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React from "react";
 import { useParams } from "react-router-dom";
+import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
+import { Link } from "react-router-dom";
+
+import { RiGovernmentLine } from "react-icons/ri";
 
 const DetailPage = () => {
   const params = useParams();
@@ -15,7 +19,7 @@ const DetailPage = () => {
   } = useQuery([params["orgName"]], fetchOrg);
 
   if (orgDataLoading) {
-    return "loading";
+    return <LoadingScreen />;
   }
 
   if (orgDataError) {
@@ -51,13 +55,16 @@ const DetailPage = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen gap-3 px-4 pt-6 sm:py-4 bg-neutral-50 sm:ml-60 ">
+    <div className="flex flex-col min-h-screen gap-3 px-4 py-10 sm:py-4 bg-neutral-50 sm:ml-60 ">
       <div className="relative p-4 mb-5 text-center bg-white rounded-lg shadow-md font-merriweather">
         {/* <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg "> */}
-        <div className="flex flex-col gap-3 ">
+        <div className="relative flex flex-col gap-3 ">
           <h1 className="text-4xl ">{params["orgName"]}</h1>
         </div>
       </div>
+      <Link className="px-3 py-1 bg-white rounded-lg shadow w-fit" to="/">
+        Voltar
+      </Link>
       <div className="flex flex-col w-full gap-2 p-4 bg-white rounded-lg shadow-md">
         <h1 className="pb-1 mb-2 text-2xl font-semibold border-b-2 font-merriweather">
           Ultimas noticias

@@ -1,7 +1,7 @@
 import React from "react";
 import "./CardNews.css";
 import "@fontsource/merriweather"; // Importe a fonte Merriweather
-export default function CardNews({ dataNews, minName }) {
+export default function CardNews({ dataNews }) {
   const news = (dataNews) => {
     const newArray = dataNews.documentos.map((item, index) => {
       const date = new Date(item.datetime * 1000);
@@ -13,22 +13,23 @@ export default function CardNews({ dataNews, minName }) {
       });
       const formattedDateTime = `${formattedDate} ${formattedTime}`;
       return (
-        <li className="shadow-md " key={index}>
+        <li className="h-full shadow-md" key={index}>
           <a
-            className="flex flex-col items-start px-2 py-2 border rounded-md hover:bg-neutral-500 bg-neutral-700 border-neutral-600"
+            className="flex flex-col items-start justify-center h-full gap-2 px-2 py-4 bg-white rounded-md hover:bg-neutral-50 "
             href={item.url}
             target="_blank"
           >
-            <span className="pl-1 text-xs font-semibold item font-merriweather ">
+            <span className="font-semibold text-normal lg:text-sm item font-merriweather">
               {item.subtitle}
             </span>
-            <div className="relative flex flex-row items-center w-full h-16 pl-2 text-start min-h-fit">
+            <div className="flex flex-col w-full gap-3 px-2 text-start">
               <h3 className="text-xs w-12/12 font-merriweather ">
                 {item.title}
               </h3>
-              <div className="absolute bottom-0 right-0 flex items-center text-xs text-neutral-400 gap-x-1">
-                <span className=""> {formattedDateTime}</span>
-              </div>
+              <span className="text-xs text-neutral-500 text-end">
+                {" "}
+                {formattedDateTime}
+              </span>
             </div>
           </a>
         </li>
@@ -38,28 +39,21 @@ export default function CardNews({ dataNews, minName }) {
   };
 
   return (
-    <div
-      className="max-w-lg p-2 m-1 text-center text-white bg-white rounded-lg shadow-lg"
-      id={dataNews["_id"]}
-    >
-      <div className="relative w-full h-60 ">
+    <div className="rounded-lg shadow-md bg-neutral-50" id={dataNews["_id"]}>
+      <div className="flex flex-col h-full p-2 text-center ">
         <div
-          className="absolute inset-0 bg-center bg-cover "
-          style={{
-            backgroundImage: `url(https://i.ibb.co/4F0Kn3v/bg-image.png)`,
-          }}
-        ></div>
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <h2 className="absolute inset-0 flex items-center justify-center p-10 text-2xl font-semibold text-white font-merriweather">
-          {dataNews["_id"]}
-        </h2>
-      </div>
-
-      <div className="flex flex-col justify-end ">
-        <h2 className="py-2 text-xl ">{}</h2>
-        <ul className="flex flex-col px-2 py-2 overflow-y-auto custom-scrollbar gap-y-2">
-          {news(dataNews)}
-        </ul>
+          className={`flex items-center justify-center h-16 pt-2 pb-2 border-b-2 `}
+        >
+          <span className="text-xl font-semibold lg:text-base font-merriweather">
+            {dataNews["_id"]}
+          </span>
+        </div>
+        <div className="flex flex-col h-full gap-3 p-2 text-center">
+          <h3 className="text-sm font-merriweather text-neutral-500 ">
+            Noticias
+          </h3>
+          <ul className="grid h-full gap-2 grid-col-1 ">{news(dataNews)}</ul>
+        </div>
       </div>
     </div>
   );

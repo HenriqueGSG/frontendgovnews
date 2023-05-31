@@ -4,9 +4,15 @@ export const ScrollOrgs = ({ listOrgs, bgColor, textColor }) => {
   const handleClick = (elKey) => {
     const element = document.getElementById(elKey);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const scrollOptions = {
+        behavior: "smooth",
+        block: "center", // ou "end", "center", "nearest"
+        inline: "nearest", // ou "start", "end", "center"
+      };
+      element.scrollIntoView(scrollOptions);
     }
   };
+
   const orgsItems = () => {
     return Object.values(listOrgs).map((org, index) => {
       return (
