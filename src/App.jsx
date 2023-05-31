@@ -30,11 +30,11 @@ function App() {
     createRoutesFromElements(
       <Route element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="/ministerios/" element={<Ministerios />} />
+        <Route path="ministerios" element={<Ministerios />} />
         {/* <Route path="/ministerios/detail/:id" element={<MinisterioDetail />} /> */}
-        <Route path="/:orgType/:orgName" element={<DetailPage />} />
-        <Route path="/assembleias" element={<Assembleias />} />
-        <Route path="/tribunais" element={<Tribunais />} />
+        <Route path="assembleias" element={<Assembleias />} />
+        <Route path="tribunais" element={<Tribunais />} />
+        <Route path=":orgType/:orgName" element={<DetailPage />} />
       </Route>
     )
   );
