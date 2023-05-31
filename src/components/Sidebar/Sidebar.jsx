@@ -59,6 +59,7 @@ const Sidebar = () => {
           <ul className="space-y-2 font-medium">
             <li>
               <Link
+                onClick={() => setSidebarOpen(!isSidebarOpen)}
                 to="/"
                 className="flex items-center p-2 text-gray-900 bg-white rounded-md shadow-sm dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
               >
@@ -68,6 +69,7 @@ const Sidebar = () => {
             </li>
             <li>
               <Link
+                onClick={() => setSidebarOpen(!isSidebarOpen)}
                 to="/ministerios"
                 className="flex items-center p-2 text-gray-900 bg-white rounded-md dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 "
               >
@@ -82,6 +84,7 @@ const Sidebar = () => {
             </li>
             <li>
               <Link
+                onClick={() => setSidebarOpen(!isSidebarOpen)}
                 to="/assembleias"
                 className="flex items-center p-2 text-gray-900 bg-white rounded-md shadow-sm dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
               >
@@ -96,6 +99,7 @@ const Sidebar = () => {
             </li>
             <li>
               <Link
+                onClick={() => setSidebarOpen(!isSidebarOpen)}
                 to="tribunais"
                 className="flex items-center p-2 text-gray-900 bg-white rounded-md shadow-sm dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
               >
