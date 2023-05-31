@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "@fontsource/merriweather"; // Importe a fonte Merriweather
 import "./CardSmall.css";
 const CardSmall = ({ lastNewsOrg, name, color, url, listOrgs, apiParam }) => {
-  console.log(lastNewsOrg);
   const cards = () => {
     return Object.values(lastNewsOrg).map((news, index) => {
       const date = new Date(news.datetime * 1000);
@@ -16,7 +15,6 @@ const CardSmall = ({ lastNewsOrg, name, color, url, listOrgs, apiParam }) => {
       return (
         <div
           className={`flex flex-col justify-start shadow-lg rounded ${color} dark:bg-gray-800 relative`}
-          // className={`flex items-center justify-center h-24 rounded ${listColors[index]} dark:bg-gray-800`}
           key={index}
         >
           <div className="flex items-center justify-center h-24 px-2 text-lg text-center text-gray-100 shadow-sm dark:text-gray-500 font-merriweather">
@@ -44,6 +42,7 @@ const CardSmall = ({ lastNewsOrg, name, color, url, listOrgs, apiParam }) => {
           to={`${apiParam}/${org}`}
           className={` min-w-fit  px-3 py-1 rounded-md text-white shadow-md ${color}`}
           style={{ whiteSpace: "nowrap" }}
+          key={index}
         >
           {org}
         </Link>
@@ -53,7 +52,6 @@ const CardSmall = ({ lastNewsOrg, name, color, url, listOrgs, apiParam }) => {
 
   return (
     <div className="relative p-4 text-black bg-white rounded-lg shadow-lg ">
-      {/* <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg "> */}
       <div className="flex flex-col gap-4 ">
         <h1 className="w-full py-2 text-3xl font-semibold text-center border-b-2 sm:text-start font-merriweather">
           {name}

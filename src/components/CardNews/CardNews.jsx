@@ -4,7 +4,6 @@ import "@fontsource/merriweather"; // Importe a fonte Merriweather
 export default function CardNews({ dataNews, minName }) {
   const news = (dataNews) => {
     const newArray = dataNews.documentos.map((item, index) => {
-      //   console.log(item);
       const date = new Date(item.datetime * 1000);
       const formattedDate = date.toLocaleDateString("en-GB");
       const formattedTime = date.toLocaleTimeString([], {
@@ -29,7 +28,6 @@ export default function CardNews({ dataNews, minName }) {
               </h3>
               <div className="absolute bottom-0 right-0 flex items-center text-xs text-neutral-400 gap-x-1">
                 <span className=""> {formattedDateTime}</span>
-                {/* <span className="">{item.hour}</span> */}
               </div>
             </div>
           </a>
@@ -56,11 +54,7 @@ export default function CardNews({ dataNews, minName }) {
           {dataNews["_id"]}
         </h2>
       </div>
-      {/* <img
-        src={dataNews.img}
-        alt="Ministério economia"
-        className="w-full h-60"
-      /> */}
+
       <div className="flex flex-col justify-end ">
         <h2 className="py-2 text-xl ">{}</h2>
         <ul className="flex flex-col px-2 py-2 overflow-y-auto custom-scrollbar gap-y-2">

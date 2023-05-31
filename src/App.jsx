@@ -22,11 +22,13 @@ import Tribunais from "./pages/Tribunais/Tribunais";
 import { Footer } from "./components/Footer/Footer";
 import Sidebar from "./components/Sidebar/Sidebar";
 import DetailPage from "./pages/DetailPage/DetailPage";
+import Layout from "./Router/Layout";
+
 function App() {
   const queryClient = new QueryClient();
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<Root />}>
+      <Route element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="/ministerios/" element={<Ministerios />} />
         {/* <Route path="/ministerios/detail/:id" element={<MinisterioDetail />} /> */}
@@ -43,17 +45,5 @@ function App() {
     </QueryClientProvider>
   );
 }
-
-const Root = () => {
-  return (
-    <>
-      <Sidebar />
-      <Navbar />
-
-      <Outlet />
-      {/* <Footer /> */}
-    </>
-  );
-};
 
 export default App;

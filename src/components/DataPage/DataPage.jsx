@@ -35,7 +35,6 @@ const DataPage = ({ apiUrl, headerName, bgColor, orgName }) => {
   if (isError || listOrgsError) {
     return "An error has occurred: " + error.message;
   }
-  console.log(listOrgsData[orgName]);
   return (
     <>
       <div className="relative min-h-screen p-4 pt-28 sm:pt-4 sm:ml-60 bg-neutral-100 ">

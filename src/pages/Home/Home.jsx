@@ -32,29 +32,6 @@ export default function Home() {
     return "An error has occurred: " + error.message;
   }
 
-  const bgCard = "bg-neutral-600";
-
-  const listColors = [
-    "bg-red-400",
-    "bg-indigo-500",
-    "bg-orange-400",
-    "bg-green-400",
-  ];
-
-  const ministerioLista = [
-    "Saúde",
-    "Educação",
-    "Economia",
-    // "Justiça e Segurança Pública",
-  ];
-  const assembleiasLista = [
-    "São paulo",
-    "Rio Grande do Sul",
-    "Rio de janeiro",
-    // "Minas Gerais",
-  ];
-  const tribunaisLista = ["Tribunal Superior Eleitoral"];
-
   return (
     <>
       {/* NAV BAR */}

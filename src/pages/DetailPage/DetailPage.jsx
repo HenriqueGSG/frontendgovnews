@@ -5,10 +5,8 @@ import { useParams } from "react-router-dom";
 
 const DetailPage = () => {
   const params = useParams();
-  console.log(params);
 
   const listOrgsUrl = `https://fastapi1-1-s9258384.deta.app/filtrar/${params["orgType"]}?org=${params["orgName"]}`;
-  console.log(listOrgsUrl);
   const fetchOrg = () => axios.get(listOrgsUrl).then((res) => res.data);
   const {
     isLoading: orgDataLoading,
@@ -25,7 +23,7 @@ const DetailPage = () => {
   }
 
   const newsOrg = () => {
-    return Object.values(orgData).map((news, idx) => {
+    return Object.values(orgData).map((news, index) => {
       const date = new Date(news.datetime * 1000);
       const formattedDate = date.toLocaleDateString("en-GB");
       const formattedTime = date.toLocaleTimeString([], {
@@ -35,9 +33,10 @@ const DetailPage = () => {
       });
       return (
         <a
+          key={index}
           target="_blank"
           href={news.url}
-          className="relative flex flex-col justify-start w-full gap-1 p-4 rounded-md shadow-md font-merriweather "
+          className="relative flex flex-col justify-start w-full gap-1 p-4 pb-8 rounded-md shadow-md font-merriweather "
         >
           <div className="flex ">
             <span> {news.subtitle}</span>
@@ -51,8 +50,6 @@ const DetailPage = () => {
     });
   };
 
-  console.log(orgData);
-  console.log(params);
   return (
     <div className="flex flex-col min-h-screen gap-3 px-4 pt-6 sm:py-4 bg-neutral-50 sm:ml-60 ">
       <div className="relative p-4 mb-5 text-center bg-white rounded-lg shadow-md font-merriweather">
