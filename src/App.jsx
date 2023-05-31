@@ -21,7 +21,6 @@ import Assembleias from "./pages/Assembleias/Assembleias";
 import Tribunais from "./pages/Tribunais/Tribunais";
 import { Footer } from "./components/Footer/Footer";
 import Sidebar from "./components/Sidebar/Sidebar";
-import MinisterioDetail from "./pages/Ministerios/MinisterioDetail/MinisterioDetail";
 import DetailPage from "./pages/DetailPage/DetailPage";
 function App() {
   const queryClient = new QueryClient();
