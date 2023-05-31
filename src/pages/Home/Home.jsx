@@ -74,6 +74,7 @@ export default function Home() {
             name={"Ministérios"}
             color={"bg-gradient-to-r from-indigo-500 to-indigo-600"}
             url={"/ministerios"}
+            apiParam={"ministerio"}
             listOrgs={listOrgsData["ministerio"]}
           />
         ) : (
@@ -86,6 +87,7 @@ export default function Home() {
             name={"Assembleias"}
             color={"bg-gradient-to-r from-green-500 to-green-600"}
             url={"/assembleias"}
+            apiParam={"assembleia"}
             listOrgs={listOrgsData["assembleia"]}
           />
         ) : (
@@ -97,6 +99,7 @@ export default function Home() {
             name={"Tribunais"}
             color={"bg-gradient-to-r from-orange-500 to-orange-600"}
             url={"/tribunais"}
+            apiParam={"tribunal"}
             listOrgs={listOrgsData["tribunal"]}
           />
         ) : (

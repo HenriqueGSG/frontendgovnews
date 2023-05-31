@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "@fontsource/merriweather"; // Importe a fonte Merriweather
 import "./CardSmall.css";
-const CardSmall = ({ lastNewsOrg, name, color, url, listOrgs }) => {
+const CardSmall = ({ lastNewsOrg, name, color, url, listOrgs, apiParam }) => {
   console.log(lastNewsOrg);
   const cards = () => {
     return Object.values(lastNewsOrg).map((news, index) => {
@@ -40,14 +40,13 @@ const CardSmall = ({ lastNewsOrg, name, color, url, listOrgs }) => {
   const orgsItems = () => {
     return Object.values(listOrgs).map((org, index) => {
       return (
-        <a
-          target="_blank"
-          href="#"
+        <Link
+          to={`${apiParam}/${org}`}
           className={` min-w-fit  px-3 py-1 rounded-md text-white shadow-md ${color}`}
           style={{ whiteSpace: "nowrap" }}
         >
           {org}
-        </a>
+        </Link>
       );
     });
   };

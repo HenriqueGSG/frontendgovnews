@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { AiFillCloseSquare, AiOutlineHome } from "react-icons/ai";
 import { RiGovernmentLine } from "react-icons/ri";
 import logo from "../../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -43,12 +44,12 @@ const Sidebar = () => {
         aria-label="Sidebar"
       >
         <div className="h-full px-3 overflow-y-auto text-white bg-neutral-200 dark:bg-gray-800">
-          <a href="/" className="flex items-center py-6 text-white">
+          <Link to="/" className="flex items-center py-6 text-white">
             <img src={logo} className="w-10 h-10 " alt="Logo" />
             <span className="self-center text-2xl font-semibold text-black whitespace-nowrap font-merriweather">
               AthenaConnect
             </span>
-          </a>
+          </Link>
           <button
             onClick={() => setSidebarOpen(!isSidebarOpen)}
             className="absolute top-1 right-2 sm:hidden"
@@ -57,17 +58,17 @@ const Sidebar = () => {
           </button>
           <ul className="space-y-2 font-medium">
             <li>
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="flex items-center p-2 text-gray-900 bg-white rounded-md shadow-sm dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
               >
                 <AiOutlineHome className="w-6 h-6 text-neutral-600" />
                 <span className="ml-3">Home</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/ministerios"
+              <Link
+                to="/ministerios"
                 className="flex items-center p-2 text-gray-900 bg-white rounded-md dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 "
               >
                 <RiGovernmentLine className="w-6 h-6 text-neutral-600" />
@@ -77,11 +78,11 @@ const Sidebar = () => {
                 {/* <span className="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300">
                   Pro
                 </span> */}
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/assembleias"
+              <Link
+                to="/assembleias"
                 className="flex items-center p-2 text-gray-900 bg-white rounded-md shadow-sm dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
               >
                 <RiGovernmentLine className="w-6 h-6 text-neutral-600" />
@@ -91,16 +92,16 @@ const Sidebar = () => {
                 {/* <span className="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">
                   3
                 </span> */}
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="tribunais"
+              <Link
+                to="tribunais"
                 className="flex items-center p-2 text-gray-900 bg-white rounded-md shadow-sm dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
               >
                 <RiGovernmentLine className="w-6 h-6 text-neutral-600" />
                 <span className="flex-1 ml-3 whitespace-nowrap">Tribunais</span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

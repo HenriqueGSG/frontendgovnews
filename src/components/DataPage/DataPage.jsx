@@ -48,7 +48,7 @@ const DataPage = ({ apiUrl, headerName, bgColor, orgName }) => {
             </p>
           </div>
           <div
-            className={`fixed gap-x-4  mt-14 sm:mt-0 sm:relative top-0 z-40 flex items-center  w-full h-16 mb-4 overflow-x-auto hidden:overflow-x-auto custom-scrollbar bg-neutral-100`}
+            className={`fixed gap-x-4  mt-14 sm:mt-0 sm:relative top-0 z-40 flex items-center  w-full h-16 mb-4 overflow-x-auto  custom-scrollbar bg-neutral-100`}
           >
             <ScrollOrgs
               listOrgs={listOrgsData[orgName]}
