@@ -3,6 +3,7 @@ import { AiFillCloseSquare, AiOutlineHome } from "react-icons/ai";
 import { RiGovernmentLine } from "react-icons/ri";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
+import { useQueryClient } from "@tanstack/react-query";
 
 const Sidebar = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -77,9 +78,9 @@ const Sidebar = () => {
                 <span className="flex-1 ml-3 whitespace-nowrap">
                   Ministérios
                 </span>
-                {/* <span className="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300">
+                <span className="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300">
                   Pro
-                </span> */}
+                </span>
               </Link>
             </li>
             <li>
@@ -92,9 +93,9 @@ const Sidebar = () => {
                 <span className="flex-1 ml-3 whitespace-nowrap">
                   Assembleias
                 </span>
-                {/* <span className="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">
+                <span className="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">
                   3
-                </span> */}
+                </span>
               </Link>
             </li>
             <li>

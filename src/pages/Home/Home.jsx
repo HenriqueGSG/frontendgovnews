@@ -1,10 +1,18 @@
-import React from "react";
-import CardSmall from "../../components/CardSmall/CardSmall";
+import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
+import OrgaoSearchBar from "./components/OrgaoSearchBar";
+import Header from "./components/Header";
+import TabHeader from "./components/Tab/TabHeader";
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState("ministerio");
+
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+  };
+
   const lastNewsUrl = "https://fastapi1-1-s9258384.deta.app/orgs";
   const listOrgsUrl = "https://fastapi1-1-s9258384.deta.app/unique-orgs";
 
@@ -38,14 +46,27 @@ export default function Home() {
 
       <div className="flex flex-col min-h-screen gap-3 px-4 pt-6 sm:py-4 bg-neutral-50 sm:ml-60 ">
         <div className="relative p-4 text-center bg-white rounded-lg shadow-lg font-merriweather">
-          {/* <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg "> */}
           <div className="flex flex-col gap-3 ">
             <h1 className="text-4xl ">Portal de notícias governamentais</h1>
             <p className="">Atualizado diariamente</p>
           </div>
         </div>
+        <Header />
+        <div className="relative p-4 text-center bg-white rounded-lg shadow-lg font-merriweather">
+          <OrgaoSearchBar data={listOrgsData} />
+        </div>
+        <div className="relative p-4 text-center bg-white rounded-lg shadow-lg font-merriweather">
+          {/* <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg "> */}
+          <div className="h-full">
+            <h1 className="pb-2 mb-4 text-lg font-semibold border-b-2">
+              Ultimas Notícias
+            </h1>
 
-        {lastNewsData["ministerio"] ? (
+            <TabHeader data={lastNewsData} />
+          </div>
+        </div>
+
+        {/* {lastNewsData["ministerio"] ? (
           <CardSmall
             lastNewsOrg={lastNewsData["ministerio"]}
             name={"Ministérios"}
@@ -81,7 +102,7 @@ export default function Home() {
           />
         ) : (
           ""
-        )}
+        )} */}
       </div>
       {
         /* MAIN */

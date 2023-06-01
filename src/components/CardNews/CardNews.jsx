@@ -42,7 +42,7 @@ export default function CardNews({ dataNews }) {
     <div className="rounded-lg shadow-md bg-neutral-50" id={dataNews["_id"]}>
       <div className="flex flex-col h-full p-2 text-center ">
         <div
-          className={`flex items-center justify-center h-16 pt-2 pb-2 border-b-2 `}
+          className={`flex items-center justify-center h-16 pt-2 pb-2 border-b-2  bg-white`}
         >
           <span className="text-xl font-semibold lg:text-base font-merriweather">
             {dataNews["_id"]}
