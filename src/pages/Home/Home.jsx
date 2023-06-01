@@ -1,42 +1,28 @@
-import React, { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
+import React from "react";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
 import OrgaoSearchBar from "./components/OrgaoSearchBar";
 import Header from "./components/Header";
 import TabHeader from "./components/Tab/TabHeader";
+import { useGetLastNews, useGetListOrgs } from "../../api/orgs";
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState("ministerio");
-
-  const handleTabChange = (tab) => {
-    setActiveTab(tab);
-  };
-
-  const lastNewsUrl = "https://fastapi1-1-s9258384.deta.app/orgs";
-  const listOrgsUrl = "https://fastapi1-1-s9258384.deta.app/unique-orgs";
-
-  const fetchLastNewsOrgs = () =>
-    axios.get(lastNewsUrl).then((res) => res.data);
-  const fetchListOrgs = () => axios.get(listOrgsUrl).then((res) => res.data);
-
   const {
     isLoading: listOrgsLoading,
     isError: listOrgsError,
     data: listOrgsData,
-  } = useQuery(["listOrgs"], fetchListOrgs);
+  } = useGetListOrgs();
   const {
-    isLoading,
-    isError,
+    isLoading: lastNewsLoading,
+    isError: lastNewsError,
     data: lastNewsData,
-    error,
     refetch,
-  } = useQuery(["lastNewsOrgs"], fetchLastNewsOrgs);
-  if (isLoading || listOrgsLoading) {
+  } = useGetLastNews();
+
+  if (lastNewsLoading || listOrgsLoading) {
     return <LoadingScreen />;
   }
 
-  if (error || listOrgsError) {
+  if (lastNewsError || listOrgsError) {
     return "An error has occurred: " + error.message;
   }
 

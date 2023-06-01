@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import TabContent from "./TabContent";
 const TabHeader = ({ data }) => {
-  console.log(data.ministerio);
   const [activeTab, setActiveTab] = useState("ministerio");
 
   const handleTabChange = (tab) => {

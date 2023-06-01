@@ -1,16 +1,31 @@
 import React, { useState } from "react";
 import { AiFillCloseSquare, AiOutlineHome } from "react-icons/ai";
-import { RiGovernmentLine } from "react-icons/ri";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
-import { useQueryClient } from "@tanstack/react-query";
+import DropdownButton from "../DropdownButton/DropdownButton";
+import { useGetListOrgs } from "../../api/orgs";
 
 const Sidebar = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
-
+  // const data = await queryClient.ensureQueryData({ queryKey, queryFn })
   //   const toggleSidebar = () => {
   //     setIsSidebarOpen(!isSidebarOpen);
   //   };
+
+  const {
+    isLoading: listOrgsLoading,
+    isError: listOrgsError,
+    data: listOrgsData,
+  } = useGetListOrgs();
+
+  if (listOrgsLoading) {
+    return "loading";
+  }
+
+  if (listOrgsError) {
+    return "An error has occurred: " + error.message;
+  }
+  console.log(listOrgsData);
   return (
     <>
       <button
@@ -39,7 +54,7 @@ const Sidebar = () => {
 
       <aside
         id="default-sidebar"
-        className={`fixed  top-0 left-0 z-50 h-screen transition-transform ${
+        className={`fixed  top-0 left-0 z-50 h-screen max-w-56 transition-transform ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } sm:translate-x-0`}
         aria-label="Sidebar"
@@ -57,57 +72,22 @@ const Sidebar = () => {
           >
             <AiFillCloseSquare size={24} />
           </button>
+
           <ul className="space-y-2 font-medium">
-            <li>
+            <div className="font-merriweather">
               <Link
                 onClick={() => setSidebarOpen(!isSidebarOpen)}
-                to="/"
-                className="flex items-center p-2 text-gray-900 bg-white rounded-md shadow-sm dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                to={"/"}
+                className="flex items-center justify-start w-full gap-2 px-3 py-2 text-sm font-semibold text-gray-900 bg-white rounded-md shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
               >
-                <AiOutlineHome className="w-6 h-6 text-neutral-600" />
-                <span className="ml-3">Home</span>
+                <AiOutlineHome className="w-5 h-5" />
+                Home
               </Link>
-            </li>
-            <li>
-              <Link
-                onClick={() => setSidebarOpen(!isSidebarOpen)}
-                to="/ministerios"
-                className="flex items-center p-2 text-gray-900 bg-white rounded-md dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 "
-              >
-                <RiGovernmentLine className="w-6 h-6 text-neutral-600" />
-                <span className="flex-1 ml-3 whitespace-nowrap">
-                  Ministérios
-                </span>
-                <span className="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300">
-                  Pro
-                </span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                onClick={() => setSidebarOpen(!isSidebarOpen)}
-                to="/assembleias"
-                className="flex items-center p-2 text-gray-900 bg-white rounded-md shadow-sm dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
-              >
-                <RiGovernmentLine className="w-6 h-6 text-neutral-600" />
-                <span className="flex-1 ml-3 whitespace-nowrap">
-                  Assembleias
-                </span>
-                <span className="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">
-                  3
-                </span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                onClick={() => setSidebarOpen(!isSidebarOpen)}
-                to="tribunais"
-                className="flex items-center p-2 text-gray-900 bg-white rounded-md shadow-sm dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
-              >
-                <RiGovernmentLine className="w-6 h-6 text-neutral-600" />
-                <span className="flex-1 ml-3 whitespace-nowrap">Tribunais</span>
-              </Link>
-            </li>
+            </div>
+            <DropdownButton
+              data={listOrgsData}
+              sidebarOpen={() => setSidebarOpen(!isSidebarOpen)}
+            />
           </ul>
         </div>
       </aside>

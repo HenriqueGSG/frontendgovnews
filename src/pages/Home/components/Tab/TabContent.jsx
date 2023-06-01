@@ -11,7 +11,6 @@ const TabContent = ({ data }) => {
     });
     return `${formattedDate} ${formattedTime}`;
   };
-  console.log(data);
   return (
     <div className="grid h-full grid-cols-1 gap-2 py-2 lg:grid-cols-2 text-start grid-">
       {data.map((item) => (
