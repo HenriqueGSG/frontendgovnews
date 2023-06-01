@@ -78,7 +78,7 @@ const Sidebar = () => {
               <Link
                 onClick={() => setSidebarOpen(!isSidebarOpen)}
                 to={"/"}
-                className="flex items-center justify-start w-full gap-2 px-3 py-2 text-sm font-semibold text-gray-900 bg-white rounded-md shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                className="flex items-center justify-start w-56 gap-2 px-3 py-2 text-sm font-semibold text-gray-900 bg-white rounded-md shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
               >
                 <AiOutlineHome className="w-5 h-5" />
                 Home

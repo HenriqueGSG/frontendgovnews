@@ -40,8 +40,11 @@ const DetailPage = () => {
           key={index}
           target="_blank"
           href={news.url}
-          className="relative flex flex-col justify-start w-full gap-1 p-4 pb-8 rounded-md shadow-md font-merriweather "
+          className="relative flex flex-col justify-start w-full gap-1 px-4 py-8 rounded-md shadow-md font-merriweather hover:bg-neutral-100 "
         >
+          <span className="absolute text-xs right-3 top-3 text-neutral-900">
+            {index + 1}º{" "}
+          </span>
           <div className="flex ">
             <span> {news.subtitle}</span>
             <span className="absolute font-sans text-xs bottom-2 right-2 text-neutral-500">{`${formattedDate} ${formattedTime}`}</span>
@@ -67,9 +70,9 @@ const DetailPage = () => {
       </Link>
       <div className="flex flex-col w-full gap-2 p-4 bg-white rounded-lg shadow-md">
         <h1 className="pb-1 mb-2 text-2xl font-semibold border-b-2 font-merriweather">
-          Ultimas noticias
+          Notícias
         </h1>
-        <div className="grid w-full grid-cols-1 gap-2 lg:grid-cols-2">
+        <div className="grid w-full grid-cols-1 gap-2 lg:grid-cols-2 xl:grid-cols-3">
           {newsOrg()}
         </div>
       </div>
