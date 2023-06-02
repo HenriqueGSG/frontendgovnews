@@ -6,6 +6,7 @@ import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
 import { Link } from "react-router-dom";
 
 import { RiGovernmentLine } from "react-icons/ri";
+import ScrollToTopButton from "../../components/ScrollToTopButton/ScrollToTopButton";
 
 const DetailPage = () => {
   const params = useParams();
@@ -58,7 +59,7 @@ const DetailPage = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen gap-2 px-4 py-16 sm:py-4 bg-gold sm:ml-14 ">
+    <div className="flex flex-col min-h-screen gap-2 px-2 pt-16 pb-5 sm:px-4 sm:py-4 bg-gold sm:ml-14 ">
       <div className="relative p-4 text-center bg-white rounded-lg shadow-md font-merriweather">
         {/* <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg "> */}
         <div className="relative flex flex-col gap-3 ">
@@ -66,7 +67,7 @@ const DetailPage = () => {
         </div>
       </div>
 
-      <div className="flex flex-col w-full gap-2 p-4 bg-white rounded-lg shadow-md">
+      <div className="relative flex flex-col w-full gap-2 p-4 bg-white rounded-lg shadow-md ">
         <Link
           className="px-3 py-1 mb-4 font-semibold text-white rounded-lg shadow bg-gold w-fit"
           to="/"
@@ -78,6 +79,9 @@ const DetailPage = () => {
         </h1>
         <div className="grid w-full grid-cols-1 gap-2 lg:grid-cols-2 xl:grid-cols-3">
           {newsOrg()}
+        </div>
+        <div className="sticky flex items-end justify-end w-full right-3 bottom-4">
+          <ScrollToTopButton />
         </div>
       </div>
     </div>

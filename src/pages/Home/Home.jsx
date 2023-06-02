@@ -4,6 +4,7 @@ import OrgaoSearchBar from "./components/OrgaoSearchBar";
 import Header from "./components/Header";
 import TabHeader from "./components/Tab/TabHeader";
 import { useGetLastNews, useGetListOrgs } from "../../api/orgs";
+import ScrollToTopButton from "../../components/ScrollToTopButton/ScrollToTopButton";
 
 export default function Home() {
   const {
@@ -30,7 +31,7 @@ export default function Home() {
     <>
       {/* NAV BAR */}
 
-      <div className="flex flex-col min-h-screen gap-2 px-4 py-16 sm:py-4 bg-gold sm:ml-14 ">
+      <div className="flex flex-col min-h-screen gap-2 px-2 pt-16 pb-5 sm:px-4 sm:py-4 bg-gold sm:ml-14 ">
         <div className="relative p-4 text-center bg-white rounded-lg shadow-lg font-merriweather">
           <div className="flex flex-col gap-3 text-blueDarker">
             <h1 className="text-4xl ">Portal de notícias governamentais</h1>
@@ -50,6 +51,9 @@ export default function Home() {
 
             <TabHeader data={lastNewsData} />
           </div>
+        </div>
+        <div className="sticky flex items-end justify-end w-full right-3 bottom-4">
+          <ScrollToTopButton />
         </div>
       </div>
       {}
