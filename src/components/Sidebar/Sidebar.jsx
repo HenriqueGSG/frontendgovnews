@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { AiFillCloseSquare, AiOutlineHome } from "react-icons/ai";
+import { BsArrowBarLeft, BsArrowBarRight } from "react-icons/bs";
+import { RxHamburgerMenu } from "react-icons/rx";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import DropdownButton from "../DropdownButton/DropdownButton";
@@ -7,10 +9,6 @@ import { useGetListOrgs } from "../../api/orgs";
 
 const Sidebar = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
-  // const data = await queryClient.ensureQueryData({ queryKey, queryFn })
-  //   const toggleSidebar = () => {
-  //     setIsSidebarOpen(!isSidebarOpen);
-  //   };
 
   const {
     isLoading: listOrgsLoading,
@@ -27,58 +25,44 @@ const Sidebar = () => {
   }
   console.log(listOrgsData);
   return (
-    <>
-      <button
-        data-drawer-target="default-sidebar"
-        data-drawer-toggle="default-sidebar"
-        aria-controls="default-sidebar"
-        type="button"
-        onClick={() => setSidebarOpen(!isSidebarOpen)}
-        className="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-      >
-        <span className="sr-only">Open sidebar</span>
-        <svg
-          className="fixed z-50 w-6 h-6 top-4"
-          aria-hidden="true"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
+    <div className="fixed z-50 sm:w-14 sm:h-full sm:bg-white">
+      {!isSidebarOpen && (
+        <button
+          onClick={() => setSidebarOpen(true)}
+          className="absolute inline-flex items-center p-2 text-sm text-white rounded-lg bg-gold top-3 left-2 hover:bg-blueMiddle focus:outline-none focus:ring-2 focus:ring-gray-200"
         >
-          <path
-            clipRule="evenodd"
-            fillRule="evenodd"
-            d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
-          ></path>
-        </svg>
-      </button>
+          <span className="sr-only">Open sidebar</span>
+          <RxHamburgerMenu size={20} />
+        </button>
+      )}
 
       <aside
         id="default-sidebar"
-        className={`fixed  top-0 left-0 z-50 h-screen max-w-56 transition-transform ${
+        className={`fixed top-0 left-0 z-50 h-screen max-w-56 transition-transform ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        } sm:translate-x-0`}
+        }`}
         aria-label="Sidebar"
       >
-        <div className="h-full px-3 overflow-y-auto text-white bg-neutral-200 dark:bg-gray-800">
-          <Link to="/" className="flex items-center py-6 text-white">
+        <div className="relative h-full px-3 py-16 overflow-y-auto text-black bg-white dark:bg-gray-800">
+          <button
+            onClick={() => setSidebarOpen(false)}
+            className="absolute inline-flex items-center p-2 text-sm text-white rounded-lg bg-gold top-3 hover:bg-blueMiddle left-3 focus:outline-none focus:ring-2 focus:ring-gray-200"
+          >
+            <BsArrowBarLeft size={20} />
+          </button>
+          <Link to="/" className="flex items-center mb-5 ">
             <img src={logo} className="w-10 h-10 " alt="Logo" />
-            <span className="self-center text-2xl font-semibold text-black whitespace-nowrap font-merriweather">
+            <span className="self-center text-2xl font-semibold whitespace-nowrap font-merriweather">
               AthenaConnect
             </span>
           </Link>
-          <button
-            onClick={() => setSidebarOpen(!isSidebarOpen)}
-            className="absolute top-1 right-2 sm:hidden"
-          >
-            <AiFillCloseSquare size={24} />
-          </button>
 
           <ul className="space-y-2 font-medium">
             <div className="font-merriweather">
               <Link
-                onClick={() => setSidebarOpen(!isSidebarOpen)}
+                onClick={() => setSidebarOpen(false)}
                 to={"/"}
-                className="flex items-center justify-start w-56 gap-2 px-3 py-2 text-sm font-semibold text-gray-900 bg-white rounded-md shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                className={`flex items-center justify-start w-56 gap-2 px-3 py-2 text-sm font-semibold text-white rounded-md shadow-sm bg-blueMiddle ring-1 ring-inset ring-gray-300 hover:bg-blueMiddle`}
               >
                 <AiOutlineHome className="w-5 h-5" />
                 Home
@@ -86,12 +70,12 @@ const Sidebar = () => {
             </div>
             <DropdownButton
               data={listOrgsData}
-              sidebarOpen={() => setSidebarOpen(!isSidebarOpen)}
+              sidebarOpen={() => setSidebarOpen(false)}
             />
           </ul>
         </div>
       </aside>
-    </>
+    </div>
   );
 };
 

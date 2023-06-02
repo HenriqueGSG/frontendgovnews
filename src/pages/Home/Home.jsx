@@ -30,70 +30,29 @@ export default function Home() {
     <>
       {/* NAV BAR */}
 
-      <div className="flex flex-col min-h-screen gap-3 px-4 pt-6 sm:py-4 bg-neutral-50 sm:ml-60 ">
+      <div className="flex flex-col min-h-screen gap-2 px-4 py-16 sm:py-4 bg-gold sm:ml-14 ">
         <div className="relative p-4 text-center bg-white rounded-lg shadow-lg font-merriweather">
-          <div className="flex flex-col gap-3 ">
+          <div className="flex flex-col gap-3 text-blueDarker">
             <h1 className="text-4xl ">Portal de notícias governamentais</h1>
             <p className="">Atualizado diariamente</p>
           </div>
         </div>
-        <Header />
         <div className="relative p-4 text-center bg-white rounded-lg shadow-lg font-merriweather">
           <OrgaoSearchBar data={listOrgsData} />
         </div>
+        <Header />
         <div className="relative p-4 text-center bg-white rounded-lg shadow-lg font-merriweather">
           {/* <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg "> */}
           <div className="h-full">
-            <h1 className="pb-2 mb-4 text-lg font-semibold border-b-2">
+            <h1 className="pb-2 mb-4 text-lg font-semibold border-b-2 text-blueDarker">
               Ultimas Notícias
             </h1>
 
             <TabHeader data={lastNewsData} />
           </div>
         </div>
-
-        {/* {lastNewsData["ministerio"] ? (
-          <CardSmall
-            lastNewsOrg={lastNewsData["ministerio"]}
-            name={"Ministérios"}
-            color={"bg-gradient-to-r from-indigo-500 to-indigo-600"}
-            url={"/ministerios"}
-            apiParam={"ministerio"}
-            listOrgs={listOrgsData["ministerio"]}
-          />
-        ) : (
-          ""
-        )}
-
-        {lastNewsData["assembleia"] ? (
-          <CardSmall
-            lastNewsOrg={lastNewsData["assembleia"]}
-            name={"Assembleias"}
-            color={"bg-gradient-to-r from-green-500 to-green-600"}
-            url={"/assembleias"}
-            apiParam={"assembleia"}
-            listOrgs={listOrgsData["assembleia"]}
-          />
-        ) : (
-          ""
-        )}
-        {lastNewsData["tribunal"] ? (
-          <CardSmall
-            lastNewsOrg={lastNewsData["tribunal"]}
-            name={"Tribunais"}
-            color={"bg-gradient-to-r from-orange-500 to-orange-600"}
-            url={"/tribunais"}
-            apiParam={"tribunal"}
-            listOrgs={listOrgsData["tribunal"]}
-          />
-        ) : (
-          ""
-        )} */}
       </div>
-      {
-        /* MAIN */
-        // CARDS
-      }
+      {}
     </>
   );
 }

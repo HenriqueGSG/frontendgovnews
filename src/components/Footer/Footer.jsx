@@ -2,7 +2,7 @@ import React from "react";
 
 export const Footer = () => {
   return (
-    <footer className=" bg-neutral-200">
+    <footer className="relative p-4 text-center rounded-lg shadow-lg bg-whitefont-merriweather text-blueDarker">
       <div className="w-full max-w-screen-xl p-4 mx-auto md:flex md:items-center md:justify-between">
         <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
           © 2023{" "}

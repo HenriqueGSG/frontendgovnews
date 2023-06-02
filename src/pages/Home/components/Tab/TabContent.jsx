@@ -12,10 +12,10 @@ const TabContent = ({ data }) => {
     return `${formattedDate} ${formattedTime}`;
   };
   return (
-    <div className="grid h-full grid-cols-1 gap-2 py-2 text-center lg:grid-cols-2 lg:text-start ">
+    <div className="grid h-full grid-cols-1 py-2 text-center gap-y-5 lg:gap-y-3 lg:grid-cols-2 lg:text-start ">
       {data.map((item) => (
-        <div key={item._id} className="py-5">
-          <div className="w-full px-2 py-1 text-base font-semibold text-center bg-white rounded-lg shadow lg:w-fit">
+        <div key={item._id} className="">
+          <div className="w-full px-2 py-1 text-base font-semibold text-center text-white rounded-lg shadow bg-blueLight lg:w-fit">
             <Link to={`${item.tipo}/${item.org}`} className="">
               {item.org}
             </Link>
@@ -24,9 +24,16 @@ const TabContent = ({ data }) => {
             <span className="font-sans text-xs text-neutral-500">
               {convertDatetime(item.datetime)}
             </span>
-            <h2 className="text-sm lg:text-base">{item.title}</h2>
+            <h2 className="text-sm font-semibold lg:text-base text-blueDarker">
+              {item.title}
+            </h2>
 
-            <a href={item.url} target="_blank" rel="noopener noreferrer">
+            <a
+              className="mt-1"
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer "
+            >
               Leia mais
             </a>
           </div>

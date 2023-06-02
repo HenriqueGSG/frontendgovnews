@@ -42,15 +42,15 @@ const DetailPage = () => {
           href={news.url}
           className="relative flex flex-col justify-start w-full gap-1 px-4 py-8 rounded-md shadow-md font-merriweather hover:bg-neutral-100 "
         >
-          <span className="absolute text-xs right-3 top-3 text-neutral-900">
+          <span className="absolute text-xs right-3 top-3 text-blueDarker">
             {index + 1}º{" "}
           </span>
           <div className="flex ">
-            <span> {news.subtitle}</span>
+            <span className="text-blueDarker"> {news.subtitle}</span>
             <span className="absolute font-sans text-xs bottom-2 right-2 text-neutral-500">{`${formattedDate} ${formattedTime}`}</span>
           </div>
 
-          <h2 className="font-semibold">{news.title}</h2>
+          <h2 className="font-semibold text-blueDarker">{news.title}</h2>
           <p className="text-sm text-neutral-500">{news.description}</p>
         </a>
       );
@@ -58,18 +58,22 @@ const DetailPage = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen gap-3 px-4 py-10 sm:py-4 bg-neutral-50 sm:ml-60 ">
-      <div className="relative p-4 mb-5 text-center bg-white rounded-lg shadow-md font-merriweather">
+    <div className="flex flex-col min-h-screen gap-2 px-4 py-16 sm:py-4 bg-gold sm:ml-14 ">
+      <div className="relative p-4 text-center bg-white rounded-lg shadow-md font-merriweather">
         {/* <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg "> */}
         <div className="relative flex flex-col gap-3 ">
           <h1 className="text-4xl ">{params["orgName"]}</h1>
         </div>
       </div>
-      <Link className="px-3 py-1 bg-white rounded-lg shadow w-fit" to="/">
-        Voltar
-      </Link>
+
       <div className="flex flex-col w-full gap-2 p-4 bg-white rounded-lg shadow-md">
-        <h1 className="pb-1 mb-2 text-2xl font-semibold border-b-2 font-merriweather">
+        <Link
+          className="px-3 py-1 mb-4 font-semibold text-white rounded-lg shadow bg-gold w-fit"
+          to="/"
+        >
+          Voltar
+        </Link>
+        <h1 className="pb-1 mb-2 text-2xl font-semibold border-b-2 font-merriweather text-blueDarker">
           Notícias
         </h1>
         <div className="grid w-full grid-cols-1 gap-2 lg:grid-cols-2 xl:grid-cols-3">

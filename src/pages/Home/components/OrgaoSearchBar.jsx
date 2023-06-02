@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { BiSearchAlt } from "react-icons/bi";
 
 const OrgaoSearchBar = ({ data }) => {
   const [searchValue, setSearchValue] = useState("");
@@ -19,15 +20,15 @@ const OrgaoSearchBar = ({ data }) => {
     const filteredResults = [
       {
         tipo: "ministerio",
-        orgs: filteredMinisterios.slice(0, 3),
+        orgs: filteredMinisterios,
       },
       {
         tipo: "assembleia",
-        orgs: filteredAssembleias.slice(0, 3),
+        orgs: filteredAssembleias,
       },
       {
         tipo: "ministerio",
-        orgs: filteredTribunais.slice(0, 3),
+        orgs: filteredTribunais,
       },
     ];
     console.log(filteredResults);
@@ -45,18 +46,21 @@ const OrgaoSearchBar = ({ data }) => {
   };
 
   return (
-    <div className="relative ">
+    <div className="relative text-blueDarker">
       <h4 className="mb-2 text-lg font-semibold text-center">Procurar</h4>
-      <input
-        className="w-full border-0 shadow-inner rounded-2xl bg-neutral-50"
-        type="text"
-        value={searchValue}
-        onChange={handleInputChange}
-        placeholder="Digite o nome do órgão..."
-      />
+      <div className="relative w-full rounded-2xl ">
+        <input
+          className="w-full border-0 shadow-inner rounded-2xl bg-neutral-50 focus:ring-gold"
+          type="text"
+          value={searchValue}
+          onChange={handleInputChange}
+          placeholder="Digite o nome do órgão..."
+        />
+        <BiSearchAlt className="absolute w-5 h-5 text-gray-500 right-3 bottom-2" />
+      </div>
       {/* <ul className="absolute left-0 z-50 flex flex-col items-center w-full gap-3 py-4 bg-white shadow-sm top-full"></ul> */}
       {filteredOrgaos.length > 0 && (
-        <ul className="absolute left-0 z-50 flex flex-col items-center w-full gap-3 py-4 mt-3 shadow-sm bg-neutral-50 top-full">
+        <ul className="absolute left-0 z-50 flex flex-col items-center w-full gap-3 py-4 mt-3 overflow-auto shadow-sm max-h-56 bg-neutral-50 top-full">
           {filteredOrgaos.map((result, index) => {
             {
               return result.orgs.map((orgao, i) => (

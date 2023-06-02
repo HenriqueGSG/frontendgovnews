@@ -10,10 +10,6 @@ function classNames(...classes) {
 }
 
 const DropdownButton = ({ data, sidebarOpen }) => {
-  const menuItems = (data) => {
-    data.map((item, index) => "a");
-  };
-
   const orgsNameFormat = {
     ministerio: "Ministério",
     assembleia: "Assembleia",
@@ -25,13 +21,15 @@ const DropdownButton = ({ data, sidebarOpen }) => {
       {Object.entries(data).map(([category, options]) => (
         <Menu as="div" className="relative w-full text-left font-merriweather">
           <div className="">
-            <Menu.Button className=" justify-between inline-flex w-56  gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+            <Menu.Button
+              className={` bg-blueMiddle justify-between inline-flex w-56  gap-x-1.5 rounded-md  px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-blueMiddle`}
+            >
               <div className="flex justify-center gap-2 ">
                 <RiGovernmentLine className="w-5 h-5" />
                 {orgsNameFormat[category]}
               </div>
               <ChevronDownIcon
-                className="w-5 h-5 -mr-1 text-gray-400"
+                className="w-5 h-5 -mr-1 text-white "
                 aria-hidden="true"
               />
             </Menu.Button>
