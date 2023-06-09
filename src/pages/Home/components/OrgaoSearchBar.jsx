@@ -27,7 +27,7 @@ const OrgaoSearchBar = ({ data }) => {
         orgs: filteredAssembleias,
       },
       {
-        tipo: "ministerio",
+        tipo: "tribunal",
         orgs: filteredTribunais,
       },
     ];
