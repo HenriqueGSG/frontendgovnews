@@ -14,13 +14,16 @@ const TabContent = ({ data }) => {
   return (
     <div className="grid h-full grid-cols-1 py-2 text-center gap-y-5 lg:gap-y-3 lg:grid-cols-2 lg:text-start ">
       {data.map((item) => (
-        <div key={item._id} className="">
+        <div
+          key={item._id}
+          className="flex flex-col items-center lg:items-start"
+        >
           <div className="w-full px-2 py-1 text-base font-semibold text-center text-white rounded-lg shadow bg-blueLight lg:w-fit">
             <Link to={`${item.tipo}/${item.org}`} className="">
               {item.org}
             </Link>
           </div>
-          <div className="flex flex-col max-w-2xl gap-2 px-3 py-2">
+          <div className="flex flex-col max-w-2xl gap-2 px-3 py-2 ">
             <span className="font-sans text-xs text-neutral-500">
               {convertDatetime(item.datetime)}
             </span>
