@@ -22,7 +22,7 @@ const DropdownButton = ({ data, sidebarOpen }) => {
         <Menu as="div" className="relative w-full text-left font-merriweather">
           <div className="">
             <Menu.Button
-              className={` bg-blueMiddle justify-between inline-flex w-56  gap-x-1.5 rounded-md  px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-blueMiddle`}
+              className={` bg-blueMiddle justify-between inline-flex w-60  gap-x-1.5 rounded-md  px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-blueMiddle`}
             >
               <div className="flex justify-center gap-2 ">
                 <RiGovernmentLine className="w-5 h-5" />
@@ -40,7 +40,7 @@ const DropdownButton = ({ data, sidebarOpen }) => {
             enter="transition ease-out duration-100"
             leave="transition ease-in duration-75"
           >
-            <Menu.Items className="z-10 w-56 py-1 overflow-y-auto bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none custom-scrollbar">
+            <Menu.Items className="z-10 py-1 overflow-y-auto bg-white rounded-md shadow-lg w-60 max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none custom-scrollbar">
               <div className="py-1">
                 {options.map((menuItem, index) => (
                   <Menu.Item>

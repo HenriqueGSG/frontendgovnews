@@ -38,7 +38,7 @@ const Sidebar = () => {
 
       <aside
         id="default-sidebar"
-        className={`fixed top-0 left-0 z-50 h-screen max-w-56 transition-transform ${
+        className={`fixed top-0 left-0 z-50 h-screen max-w-60 transition-transform ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
         aria-label="Sidebar"
@@ -62,7 +62,7 @@ const Sidebar = () => {
               <Link
                 onClick={() => setSidebarOpen(false)}
                 to={"/"}
-                className={`flex items-center justify-start w-56 gap-2 px-3 py-2 text-sm font-semibold text-white rounded-md shadow-sm bg-blueMiddle ring-1 ring-inset ring-gray-300 hover:bg-blueMiddle`}
+                className={`flex items-center justify-start w-60 gap-2 px-3 py-2 text-sm font-semibold text-white rounded-md shadow-sm bg-blueMiddle ring-1 ring-inset ring-gray-300 hover:bg-blueMiddle`}
               >
                 <AiOutlineHome className="w-5 h-5" />
                 Home

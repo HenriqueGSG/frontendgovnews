@@ -32,6 +32,11 @@ export default function Home() {
       {/* NAV BAR */}
 
       <div className="flex flex-col min-h-screen gap-2 px-2 pt-16 pb-5 sm:px-4 sm:py-4 bg-gold sm:ml-14 ">
+        {/* <div className="relative p-4 text-center rounded-lg shadow-lg font-merriweather h-96">
+          <h1 className="text-6xl text-white ">
+            Portal de notícias governamentais
+          </h1>
+        </div> */}
         <div className="relative p-4 text-center bg-white rounded-lg shadow-lg font-merriweather">
           <div className="flex flex-col gap-3 text-blueDarker">
             <h1 className="text-4xl ">Portal de notícias governamentais</h1>

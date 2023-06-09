@@ -15,7 +15,7 @@ const Header = () => {
         </div>
         <div className="flex flex-col justify-center h-full ">
           <h3 className="text-lg font-semibold">Tribunais</h3>
-          <span className="text-6xl">1</span>
+          <span className="text-6xl">3</span>
         </div>
       </div>
     </div>

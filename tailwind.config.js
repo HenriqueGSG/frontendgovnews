@@ -11,9 +11,9 @@ export default {
         merriweather: ["Merriweather", "serif"],
       },
       colors: {
-        gold: "#CCA000",
+        gold: "#003049",
         yellow: "#FFD60A",
-        blueLight: "#003566",
+        blueLight: "#003049",
         blueMiddle: "#001D3D",
         blueDarker: "#000814",
       },

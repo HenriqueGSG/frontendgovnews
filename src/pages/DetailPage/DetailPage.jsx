@@ -29,6 +29,7 @@ const DetailPage = () => {
 
   const newsOrg = () => {
     return Object.values(orgData).map((news, index) => {
+      console.log(news.url);
       const date = new Date(news.datetime * 1000);
       const formattedDate = date.toLocaleDateString("en-GB");
       const formattedTime = date.toLocaleTimeString([], {
