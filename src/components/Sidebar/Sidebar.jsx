@@ -50,7 +50,7 @@ const Sidebar = () => {
           >
             <BsArrowBarLeft size={20} />
           </button>
-          <Link to="/" className="flex items-center mb-5 ">
+          <Link to="/" className="absolute flex items-center mb-5 bottom-4">
             <img src={logo} className="w-10 h-10 " alt="Logo" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap font-merriweather">
               AthenaConnect

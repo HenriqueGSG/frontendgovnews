@@ -51,7 +51,7 @@ export default function Home() {
           {/* <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg "> */}
           <div className="h-full">
             <h1 className="pb-2 mb-4 text-lg font-semibold border-b-2 text-blueDarker">
-              Ultimas Notícias
+              Últimas Notícias
             </h1>
 
             <TabHeader data={lastNewsData} />
